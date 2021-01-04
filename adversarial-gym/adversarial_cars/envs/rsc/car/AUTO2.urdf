@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="AUTO">
+
+    <link name="Untitled">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cube">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.15 0.01"/>
+        </geometry>
+        <material name="Material.010"/>
+      </visual>
+      <collision name="Cube">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.1 0.15 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.001">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.05"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Torus.002">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="Torus.002.stl" scale="0.028 0.028 0.04"/>
+        </geometry>
+        <material name="Material.009"/>
+      </visual>
+      <collision name="Torus.002.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="Torus.003.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.002">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.05"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Torus">
+        <origin xyz="0 0 0" rpy="0 -3.14159 0.86538"/>
+        <geometry>
+          <mesh filename="Torus.stl" scale="0.028 0.028 0.04"/>
+        </geometry>
+        <material name="Material.002"/>
+      </visual>
+      <collision name="Torus.000">
+        <origin xyz="0 0 0" rpy="0 3.14159 0.86538"/>
+        <geometry>
+          <mesh filename="Torus.004.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.003">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cylinder">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.005" length="0.005"/>
+        </geometry>
+        <material name="Material.011"/>
+      </visual>
+      <collision name="Cylinder">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.005" length="0.005"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.004">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cube.004">
+        <origin xyz="0 0 0" rpy="0 0 -0.02806"/>
+        <geometry>
+          <box size="0.025 0.01 0.002"/>
+        </geometry>
+        <material name="Material.006"/>
+      </visual>
+      <collision name="Cube.004">
+        <origin xyz="0 0 0" rpy="0 0 -0.02806"/>
+        <geometry>
+          <box size="0.025 0.01 0.002"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.005">
+      <inertial>
+        <origin xyz="0 0 -0.0065" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cube.001">
+        <origin xyz="0 0 -0.0065" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.013 0.005 0.002"/>
+        </geometry>
+        <material name="Material.012"/>
+      </visual>
+      <collision name="Cube.001">
+        <origin xyz="0 0 -0.0065" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.013 0.005 0.002"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.006">
+      <inertial>
+        <origin xyz="0 0 -0.0065" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="3e-05"/>
+      </inertial>
+      <visual name="Cube.003">
+        <origin xyz="0 0 -0.0065" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.013 0.005 0.002"/>
+        </geometry>
+        <material name="Material.008"/>
+      </visual>
+      <collision name="Cube.003">
+        <origin xyz="0 0 -0.0065" rpy="0 1.5708 0"/>
+        <geometry>
+          <box size="0.013 0.005 0.002"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.007">
+      <inertial>
+        <origin xyz="0.01 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Cube.002">
+        <origin xyz="0.01 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.025 0.003 0.002"/>
+        </geometry>
+        <material name="Material.013"/>
+      </visual>
+      <collision name="Cube.002">
+        <origin xyz="0.01 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.025 0.003 0.002"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="Untitled.008">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="Torus.001">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="Torus.001.stl" scale="0.0072 0.0072 0.03"/>
+        </geometry>
+        <material name="Material.003"/>
+      </visual>
+      <collision name="Torus.001.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="Torus.005.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="Untitled.001" type="continuous">
+      <origin xyz="-0.065 0.04 0" rpy="0 1.5708 0"/>
+      <parent link="Untitled"/>
+      <child link="Untitled.001"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="10.0" velocity="32.0"/>
+    </joint>
+
+    <joint name="Untitled.002" type="continuous">
+      <origin xyz="0.065 0.04 0" rpy="0 1.5708 0"/>
+      <parent link="Untitled"/>
+      <child link="Untitled.002"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="10.0" velocity="32.0"/>
+    </joint>
+
+    <joint name="Untitled.003" type="fixed">
+      <origin xyz="0 -0.05 -0.009" rpy="0 0 0"/>
+      <parent link="Untitled"/>
+      <child link="Untitled.003"/>
+    </joint>
+
+    <joint name="Untitled.004" type="revolute">
+      <origin xyz="0 0 -0.004" rpy="0 0 0"/>
+      <parent link="Untitled.003"/>
+      <child link="Untitled.004"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="2.0" velocity="10.0"/>
+    </joint>
+
+    <joint name="Untitled.005" type="fixed">
+      <origin xyz="0.0125 -0.00035 0" rpy="0 0 -0.02806"/>
+      <parent link="Untitled.004"/>
+      <child link="Untitled.005"/>
+    </joint>
+
+    <joint name="Untitled.006" type="fixed">
+      <origin xyz="-0.0125 0.00035 0" rpy="0 0 -0.02806"/>
+      <parent link="Untitled.004"/>
+      <child link="Untitled.006"/>
+    </joint>
+
+    <joint name="Untitled.007" type="fixed">
+      <origin xyz="0.0025 0 -0.013" rpy="0 0 0"/>
+      <parent link="Untitled.006"/>
+      <child link="Untitled.007"/>
+    </joint>
+
+    <joint name="Untitled.008" type="continuous">
+      <origin xyz="0.01 0 0" rpy="0 1.5708 0"/>
+      <parent link="Untitled.007"/>
+      <child link="Untitled.008"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="30" velocity="250"/>
+    </joint>
+
+    <material name="Material.002">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="Material.003">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="Material.006">
+      <color rgba="0.32 0.32 0.32 1.0"/>
+    </material>
+
+    <material name="Material.008">
+      <color rgba="0.32 0.32 0.32 1.0"/>
+    </material>
+
+    <material name="Material.009">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="Material.010">
+      <color rgba="0 0 0 1.0"/>
+    </material>
+
+    <material name="Material.011">
+      <color rgba="0.32 0.32 0.32 1.0"/>
+    </material>
+
+    <material name="Material.012">
+      <color rgba="0.32 0.32 0.32 1.0"/>
+    </material>
+
+    <material name="Material.013">
+      <color rgba="0.32 0.32 0.32 1.0"/>
+    </material>
+
+  </robot>
