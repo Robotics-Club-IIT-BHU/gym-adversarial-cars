@@ -1,3 +1,2 @@
-gym
-tensorflow
-pybullet
+gym==0.18.0
+pybullet==2.8.3
