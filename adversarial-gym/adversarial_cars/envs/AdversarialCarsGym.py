@@ -9,8 +9,6 @@ import random
 import os
 import math
 
-path_to_rsc = "rsc/"
-
 class AdversarialCars(gym.Env):
     metadata = {'render.modes':['human', 'rgb_array'],
                 'video.frames_per_second':50
@@ -73,7 +71,7 @@ class AdversarialCars(gym.Env):
         observations: a numpy 2x2 array
         rewards: a list of rewards - [agent1, agent2]
         dones: list of bools - to signify terminal state for both agents 
-            [description]
+
         """
         observations = []
         rewards = []
@@ -99,17 +97,29 @@ class AdversarialCars(gym.Env):
         return observations, rewards, dones, None
 
     def reset(self):
+        """reset function to reset the environment.
+
+        This function reloads the entire environment along with the
+        arena plane, walls, gravity and the physical bots. This must be
+        called before using because the init function does not load these
+        things.
+
+        Returns
+        -------
+        observations: a numpy 2x2 array
+
+        """
         p.resetSimulation() 
         dir_path = os.path.dirname(os.path.realpath(__file__))
         path_to_rsc = dir_path + '/rsc/'
         p.loadURDF(path_to_rsc+"plane.urdf")
+
         #self.wall1 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
         #self.wall2 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,-self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
         #self.wall3 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
         #self.wall4 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [-self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
 
         p.setGravity(0, 0, -10)
-   
         self.car1pos = [random.uniform(-self.max_dist_x,0),random.uniform(-self.max_dist_y,0), 0.03]
         self.car2pos = [random.uniform(0,self.max_dist_x),random.uniform(0,self.max_dist_y), 0.03]
 
@@ -123,6 +133,23 @@ class AdversarialCars(gym.Env):
         pass
 
     def perform_action(self, car, action):
+        """perform_action function to give actions to the robots.
+
+        This function gives actions to the joint motors of the
+        robot, which makes the robot move. We have used position control,
+        for the angle of the front wheel and velocity control for the speed
+        of the rear wheels.
+
+        Parameters
+        ----------
+        car : int, required
+            0 if action is to be passed to agent_0
+            1 if action is to be passed to agent_1
+        action : list/array of actions for the agent
+            Both the actions in the list should be normalized
+            between -1 to 1. This is done because most frameworks
+            normalize the actions.
+        """
         action[0]=action[0]*10+20
         action[1]=action[1]*0.5
         p.setJointMotorControl2(car, 3, p.POSITION_CONTROL, targetPosition =action[1],force = self.maxForce)
@@ -146,6 +173,19 @@ class AdversarialCars(gym.Env):
         
     
     def _get_obs(self):
+        """_get_obs Function to get observations for both the agents.
+
+        This function is used to calculate and return the observations
+        for both the agents in the environment.
+
+        Returns
+        -------
+        observation: a numpy 2x2 array
+            The first element of both the 2x1 lists
+            is the distance between the agents, and the
+            second element is the angle the corresponding agent
+            makes with the line connecting the two agents.
+        """
         pos1, orn1 = p.getBasePositionAndOrientation(self.car1)
         pos2, orn2 = p.getBasePositionAndOrientation(self.car2)
         theta1 = p.getEulerFromQuaternion(orn1)[2]
@@ -184,6 +224,21 @@ class AdversarialCars(gym.Env):
         return np.array([[dis,angle1],[dis,angle2]])
 
     def _get_rewards(self,carNum, obs):
+        """_get_rewards function to return rewards for each agent.
+
+        Parameters
+        ----------
+        carNum : int, required
+            0 for agent_0
+            1 for agent_1
+        obs : A numpy 2x1 array
+            observation as received from get_observation
+
+        Returns
+        -------
+        reward: int
+            The reward for the particular agent, given the observation.
+        """
         if(carNum == 0):
             return -100*math.exp(-obs[0])
         if(carNum == 1):
@@ -191,27 +246,23 @@ class AdversarialCars(gym.Env):
         
 
     def _check_done(self, obs):
+        """_check_done function to check whether terminal state has been reached.
+
+        This function checks 2 things:
+        1. If the environment has been running for more than 14400 steps
+        2. If the distance between the two agents is less than a threshold
+
+        Parameters
+        ----------
+        obs :   A numpy 2x1 array 
+
+        Returns
+        -------
+        Two integers: done and cause
+        """
         if(self.step_counter==14400):
             return 1, 0
         elif(obs[0]<=0.2):
             return 1, 1
         else:
             return 0, None
-
-    def vis_traj(self,line_thickness = 5,life_time = 15):
-        
-        pos_car1 = p.getBasePositionAndOrientation(self.car1)[0]
-        pos_car2 = p.getBasePositionAndOrientation(self.car2)[0]
-        x1=pos_car1[0]-self.prev_pos_car1[0]
-        y1=pos_car1[1]-self.prev_pos_car1[1]
-        x2=pos_car2[0]-self.prev_pos_car2[0]
-        y2=pos_car2[1]-self.prev_pos_car2[1]
-        d1=np.sqrt(x1**2 + y1**2)
-        d2=np.sqrt(x2**2 + y2**2)
-        if(d1<7):
-            p.addUserDebugLine(pos_car1,self.prev_pos_car1,[1,0,0],line_thickness,lifeTime=life_time)
-        if(d2<7):
-            p.addUserDebugLine(pos_car2,self.prev_pos_car2,[0,0,1],line_thickness,lifeTime=life_time)
-
-        self.prev_pos_car1 = pos_car1
-        self.prev_pos_car2 = pos_car2
