@@ -4,6 +4,8 @@ Adversarial Chase and Run Cars Gym is a **gym environment**, to test and develop
 
 The gym environment was built in the physics simulator **[PyBullet](https://pybullet.org/) - a python module for physics simulations of robots**, because of its easy usage and integration with RL frameworks like **Stable Baselines**. Work is currently being done on training the agents to compete via Multi Agent Reinforcement Learning.
 
+The **mobile robots** that are being used in the environment were built and designed completely in **Blender**, and were exported as **URDFs**, so that they could be imported in all physics simulators.
+
 ## Installation Guidelines
 
 This gym environment can be installed by following these steps:
@@ -31,8 +33,10 @@ This gym environment can be installed by following these steps:
 
 In case there are problems with the PyBullet installation, you can refer to this [guide](https://github.com/Robotics-Club-IIT-BHU/Robo-Summer-Camp-20/blob/master/Part1/Subpart%201/README.md).
 
-      
-## Made and maintained by
+## Contributions
+Contributions are welcome! However, if it's going to be a major change, please create an issue first. Before starting to work on something, please comment on a specific issue and say you'd like to work on it.
+
+## Made and maintained by ✨
 
 <table>
    <td align="center">
@@ -65,4 +69,28 @@ In case there are problems with the PyBullet installation, you can refer to this
       </a>
       <br />
    </td>
+</table>
+
+## Advisors and Mentors 🙌
+<table>
+   <td align="center">
+      <a href="https://github.com/lok-i">
+         <img src="https://avatars1.githubusercontent.com/u/54435909?s=460&u=29af076049dab351b2e43621e9a433919bf50fb1&v=43" width="100px;" alt=""/>
+         <br />
+         <sub>
+            <b>Lokesh Krishna</b>
+         </sub>
+      </a>
+      <br />
+   </td>   
+   <td align="center">
+      <a href="https://github.com/NiranthS">
+         <img src="https://avatars3.githubusercontent.com/u/44475481?s=400&v=4" width="100px;" alt=""/>
+         <br />
+         <sub>
+            <b>Niranth Sai</b>
+         </sub>
+      </a>
+      <br />
+   </td>   
 </table>
