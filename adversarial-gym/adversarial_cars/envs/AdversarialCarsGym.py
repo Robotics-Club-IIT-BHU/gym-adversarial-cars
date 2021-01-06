@@ -41,7 +41,7 @@ class AdversarialCars(gym.Env):
         #to the motor joints of our robot.
         self.maxForce = 30 
         
-        self.observation_space = np.array([[1.0,1.0],[1.0,1.0]])
+        self.observation_space = np.array([[1.0,1.0,1.0],[1.0,1.0,1.0]])
 
         #Action Space
         #For all the agents, the action space is same.
@@ -93,7 +93,9 @@ class AdversarialCars(gym.Env):
                     rewards[0] -= 72000
                 elif(cause==0):
                     rewards[0] += 72000
-                    rewards[1] -= 72000       	  
+                    rewards[1] -= 72000
+                elif(cause==2):
+                    rewards[i] -= 72000
         return observations, rewards, dones, None
 
     def reset(self):
@@ -114,10 +116,10 @@ class AdversarialCars(gym.Env):
         path_to_rsc = dir_path + '/rsc/'
         p.loadURDF(path_to_rsc+"plane.urdf")
 
-        #self.wall1 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
-        #self.wall2 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,-self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
-        #self.wall3 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
-        #self.wall4 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [-self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
+        self.wall1 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
+        self.wall2 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [0,-self.max_dist_y,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,0]), useFixedBase = True)
+        self.wall3 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
+        self.wall4 = p.loadURDF(path_to_rsc+"wall.urdf", basePosition = [-self.max_dist_x,0,1], baseOrientation = p.getQuaternionFromEuler([1.5707,0,1.5707]), useFixedBase = True)
 
         p.setGravity(0, 0, -10)
         self.car1pos = [random.uniform(-self.max_dist_x,0),random.uniform(-self.max_dist_y,0), 0.03]
@@ -158,6 +160,7 @@ class AdversarialCars(gym.Env):
         p.setJointMotorControl2(car, 7, p.VELOCITY_CONTROL, targetVelocity =action[0]*7,force = self.maxForce)
         pos1, ori1 = p.getBasePositionAndOrientation(car)
         lin, ang = p.getBaseVelocity(car)
+        '''
         if(pos1[0]<-self.max_dist_x):
             p.resetBasePositionAndOrientation(car, [pos1[0]+2*self.max_dist_x,pos1[1],pos1[2]], ori1)
             vel = p.resetBaseVelocity(car, lin)
@@ -170,6 +173,7 @@ class AdversarialCars(gym.Env):
         if(pos1[1]>self.max_dist_y):
             p.resetBasePositionAndOrientation(car, [pos1[0],pos1[1]-2*self.max_dist_y,pos1[2]], ori1)
             vel = p.resetBaseVelocity(car, lin)
+        '''
         
     
     def _get_obs(self):
@@ -221,7 +225,7 @@ class AdversarialCars(gym.Env):
             angle2 = -(np.pi + angle2)
         if(dot2<0 and cross2>0):
             angle2 = np.pi - angle2 
-        return np.array([[dis,angle1],[dis,angle2]])
+        return np.array([[wall1,dis,angle1],[wall2,dis,angle2]])
 
     def _get_rewards(self,carNum, obs):
         """_get_rewards function to return rewards for each agent.
@@ -240,9 +244,9 @@ class AdversarialCars(gym.Env):
             The reward for the particular agent, given the observation.
         """
         if(carNum == 0):
-            return -100*math.exp(-obs[0])
+            return -100*math.exp(-obs[1])
         if(carNum == 1):
-            return 100*math.exp(-obs[0])
+            return 100*math.exp(-obs[1])
         
 
     def _check_done(self, obs):
@@ -262,7 +266,9 @@ class AdversarialCars(gym.Env):
         """
         if(self.step_counter==14400):
             return 1, 0
-        elif(obs[0]<=0.2):
+        elif(obs[1]<=0.2):
             return 1, 1
+        elif(obs[0]<=0.2):
+            return 1, 2
         else:
             return 0, None
