@@ -3,9 +3,11 @@
 Adversarial Chase and Run Cars Gym is a **gym environment**, to test and develop algorithms related to **Multi Agent Systems**, especially those related to Multi-Agent Reinforcement Learning. This was done under the Robotics Research Group (RoboReG) to try and learn emergent behavior between agents competing against each other via Reinforcement learning and how it could generate new control strategies.
 
 This gym environment consists of **2 mobile robots**, where the task of one of the robots is to chase the other one, while the other simply avoids the chaser. The environment also consists of **walls which define the operating area**, so that the robots remain confined in a particular area. Though this has been done in 2D-worlds, **analyzing emergent behaviour** in a physical world with **real physics and dynamics** is a relatively less explored area.
+
 <p align="center">
-<img src="media/cars.gif">
+   <img src="media/cars.gif">
 </p>
+
 The gym environment was built in the physics simulator **[PyBullet](https://pybullet.org/) - a python module for physics simulations of robots**, because of its easy usage and integration with RL frameworks like **Stable Baselines**. Work is currently being done on training the agents to compete via Multi Agent Reinforcement Learning.
 
 The **mobile robots** that are being used in the environment were built and designed completely in **Blender**, and were exported as **URDFs**, so that they could be imported in all physics simulators.
