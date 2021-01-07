@@ -1,4 +1,4 @@
-# Adversarial Chase and Run Cars Gym
+# Adversarial Chase and Run Cars Gym [![](https://img.shields.io/badge/version-0.0.1-red)]![](https://img.shields.io/badge/license-MIT-brightgreen)]
 
 Adversarial Chase and Run Cars Gym is a **gym environment**, to test and develop algorithms related to **Multi Agent Systems**, especially those related to Multi-Agent Reinforcement Learning. This was done under the Robotics Research Group (RoboReG) to try and learn emergent behavior between agents competing against each other via Reinforcement learning and how it could generate new control strategies.
 
@@ -33,7 +33,7 @@ This gym environment can be installed by following these steps:
    Activation and deactivation of the virtual environment, will be done as specified [here](https://docs.python.org/3/library/venv.html). Scroll down to the table where the activation method for various operating systems is provided. Deactivation, in most cases, can be done by simply typing deactivate while being in in the virtual environment.
 
 1. Once you activate your virtual environment, you will have to install the various dependencies of this project. We have simplified this process for you. Just follow the following steps:
-   * Download/Clone this repository on to your local machine.
+   * Download/Clone this repository on to your local machine
    * Navigate to the root folder of this repository through your terminal.
    * Execute the following command in your terminal.
 
