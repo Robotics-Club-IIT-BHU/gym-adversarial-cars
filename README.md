@@ -1,4 +1,8 @@
-# Adversarial Chase and Run Cars Gym <img src=https://img.shields.io/badge/version-0.0.1-red><img src=https://img.shields.io/badge/license-MIT-brightgreen>
+# Adversarial Chase and Run Cars Gym 
+<div align="center">
+   <img src=https://img.shields.io/badge/version-0.0.1-red>
+   <img src=https://img.shields.io/badge/license-MIT-brightgreen>
+</div>
 
 Adversarial Chase and Run Cars Gym is a **gym environment**, to test and develop algorithms related to **Multi Agent Systems**, especially those related to Multi-Agent Reinforcement Learning. This was done under the Robotics Research Group (RoboReG) to try and learn emergent behavior between agents competing against each other via Reinforcement learning and how it could generate new control strategies.
 
