@@ -64,9 +64,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/aksayushx"><img src="https://avatars2.githubusercontent.com/u/55887638?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ayush Kumar Shaw</b></sub></a><br /><a href="#ideas-aksayushx" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=aksayushx" title="Code">💻</a></td>
-  </tr>
-   <tr>
-    <td align="center"><a href="http://terabyte17.github.io"><img src="https://avatars3.githubusercontent.com/u/60649571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yash Sahijwani</b></sub></a><br /><a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=Terabyte17" title="Code">💻</a> <a href="#ideas-Terabyte17" title="Ideas, Planning, & Feedback">🤔</a></td>
+     <td align="center"><a href="http://terabyte17.github.io"><img src="https://avatars3.githubusercontent.com/u/60649571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yash Sahijwani</b></sub></a><br /><a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=Terabyte17" title="Code">💻</a> <a href="#ideas-Terabyte17" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
