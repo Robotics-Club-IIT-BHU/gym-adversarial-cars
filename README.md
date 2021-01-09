@@ -56,38 +56,25 @@ Contributions are welcome! However, if it's going to be a major change, please c
 
 ## Made and maintained by ✨
 
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
-   <td align="center">
-      <a href="https://github.com/Terabyte17">
-         <img src="https://avatars1.githubusercontent.com/u/60649571?s=400&u=e8e56b7d722ad82052f836ca929c79216144e425&v=4" width="100px;" alt=""/>
-         <br />
-         <sub>
-            <b>Yash Sahijwani</b>
-         </sub>
-      </a>
-      <br />
-   </td>
-   <td align="center">
-      <a href="https://github.com/aksayushx">
-         <img src="https://avatars2.githubusercontent.com/u/55887638?s=400&u=bb089c514c11a7c371da30247f738f6a9489b168&v=4" width="100px;" alt=""/>
-         <br />
-         <sub>
-            <b>Ayush Kumar Shaw</b>
-         </sub>
-      </a>
-      <br />
-   </td>
-   <td align="center">
-      <a href="https://github.com/Raghav-Soni">
-         <img src="https://avatars3.githubusercontent.com/u/60649723?s=460&v=4" width="100px;" alt=""/>
-         <br />
-         <sub>
-            <b>Raghav Soni</b>
-         </sub>
-      </a>
-      <br />
-   </td>
+  <tr>
+     <td align="center"><a href="http://terabyte17.github.io"><img src="https://avatars3.githubusercontent.com/u/60649571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yash Sahijwani</b></sub></a><br /><a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=Terabyte17" title="Code">💻</a> <a href="#ideas-Terabyte17" title="Ideas, Planning, & Feedback">🤔</a></td>
+     <td align="center"><a href="https://github.com/aksayushx"><img src="https://avatars2.githubusercontent.com/u/55887638?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ayush Kumar Shaw</b></sub></a><br /><a href="#ideas-aksayushx" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=aksayushx" title="Code">💻</a></td>
+     <td align="center"><a href="https://github.com/Raghav-Soni"><img src="https://avatars1.githubusercontent.com/u/60649723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raghav-Soni</b></sub></a><br /><a href="https://github.com/Robotics-Club-IIT-BHU/gym-adversarial-cars/commits?author=Raghav-Soni" title="Code">💻</a> <a href="#ideas-Raghav-Soni" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
 </table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Advisors and Mentors 🙌
 <table>
